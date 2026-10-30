@@ -587,17 +587,14 @@ footer {
   }
 
   /* 2. تنسيق سكشن الهيرو */
-  /* تعديل قسم الهيرو لضبط الصورة والمساحات */
+  /* تعديل قسم الهيرو لضبط الصورة لتغطي الشاشة بالكامل */
   .hero {
-    padding-top: 120px;
-    padding-bottom: 80px; /* مساحة من تحت عشان صورتك تاخد راحتها وتظهر */
+    padding-top: 140px;
+    min-height: 100vh; /* إجبار السكشن على أخذ ارتفاع الشاشة بالكامل */
 
-    /* فصل الخصائص لمنع أي تعارض وإظهار الصورة */
-    background-color: var(--bg-color);
-    background-image: url("../img/hero.png");
-    background-position: left bottom; /* تثبيت صورتك في أسفل اليسار */
-    background-size: 95% auto; /* حجم مناسب للموبايل */
-    background-repeat: no-repeat;
+    /* استخدام cover مع ضبط الـ position لـ 20% لسحب صورتك قليلاً لتكون ظاهرة خلف النص */
+    background: url("../img/hero.png") no-repeat 20% center;
+    background-size: cover;
   }
 
   /* طبقة تعتيم خفيفة وراء الكلام في الموبايل فقط لسهولة القراءة بدون مربعات مزعجة */
@@ -618,6 +615,7 @@ footer {
 
   .hero-container {
     justify-content: center;
+    align-items: center;
   }
 
   .hero-content {
@@ -626,16 +624,15 @@ footer {
     flex-direction: column;
     align-items: center;
 
-    /* خلفية شفافة وتأثير زجاجي عشان متغطيش على صورتك */
-    background-color: rgba(11, 15, 20, 0.4);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px); /* لدعم متصفحات سفاري */
+    /* زيادة عتامة الصندوق الزجاجي قليلاً لضمان وضوح النص تماماً فوق الصورة */
+    background-color: rgba(11, 15, 20, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 
-    padding: 25px;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.05); /* إطار خفيف شيك */
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
-
   .hero-content h1 {
     font-size: 2.8rem;
   }
