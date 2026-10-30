@@ -51,7 +51,7 @@ header {
 
 /* Logo Styles */
 .nav-logo {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 800;
   text-decoration: none;
   color: var(--text-color); /* حروف AY باللون الأبيض */
@@ -123,22 +123,128 @@ header {
 }
 
 /* =========================================
-   Hero Section
+   Hero Section - Layout & Background
    ========================================= */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
+  padding-top: 80px;
 
-  /* أضف هذا السطر لتعويض ارتفاع الناف بار */
-  padding-top: 80px; /* يمكنك تعديل الرقم حسب ارتفاع الناف بار الفعلي */
-
-  background: linear-gradient(
-      to right,
-      rgba(11, 15, 20, 0.2),
-      rgba(11, 15, 20, 0.9)
-    ),
-    url("../img/hero.png") no-repeat center center;
+  /* التعديل هنا: استخدام -120px لشد الصورة لليسار بدلاً من left */
+  background: url("../img/hero.png") no-repeat -50px center;
   background-size: cover;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* دفع الصندوق بالكامل للنصف الأيمن */
+}
+
+/* =========================================
+     Hero Section - Typography
+     ========================================= */
+.hero-content {
+  width: 100%;
+  max-width: 520px; /* عرض مثالي يمنع التداخل مع الرموز البرمجية */
+  text-align: left;
+}
+
+.hero-content .hi {
+  color: var(--text-color); /* اللون الأبيض حسب التصميم */
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.hero-content h1 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.hero-content .job-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: rgb(217, 217, 217); /* اللون الأبيض حسب التصميم */
+  margin-bottom: 1.2rem;
+}
+
+.hero-content .job-title .divider {
+  color: var(--text-muted); /* الخط الفاصل بلون رمادي خفيف */
+  font-weight: 400;
+  margin: 0 5px;
+}
+
+.hero-content .headline {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+/* =========================================
+     Hero Section - Buttons & Actions
+     ========================================= */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* المسافة بين الأزرار والأيقونات */
+  flex-wrap: wrap; /* للنزول لسطر جديد في شاشات الموبايل */
+}
+
+.cta-btn {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 8px 28px;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.social-links-btn {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.social-links-btn a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-links-btn a:hover {
+  transform: translateY(-5px);
+  background-color: #00e686;
 }
