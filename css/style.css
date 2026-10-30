@@ -523,43 +523,50 @@ footer {
    Responsive Design (Media Queries)
    ========================================= */
 
-/* =========================================
-   Responsive Design (Media Queries)
-   ========================================= */
-
-/* الشاشات المتوسطة (التابلت والموبايل بالعرض) */
 @media (max-width: 768px) {
-  /* تعديل الناف بار عشان مياخدش مساحة كبيرة */
+  /* 1. تنسيق الناف بار ليكون أنيق ومدمج */
   header {
-    padding: 10px 0; /* تقليل المسافة فوق وتحت الناف بار */
+    padding: 10px 0;
   }
 
   .nav-container {
     flex-direction: column;
-    gap: 10px; /* تقليل المسافة بين اللوجو والروابط */
-    padding: 10px;
-  }
-
-  .nav-logo {
-    font-size: 2rem; /* تصغير اللوجو شوية */
+    gap: 10px;
   }
 
   .nav-menu ul {
-    flex-wrap: wrap;
+    gap: 15px;
     justify-content: center;
-    gap: 1rem; /* تقليل المسافة بين الروابط */
+    flex-wrap: wrap;
   }
 
-  /* تعديل قسم الهيرو لضبط الصورة والمساحات */
-  .hero {
-    /* تزويد المسافة اللي فوق عشان الناف بار ميغطيش على الكلام */
-    /* الناف بار حجمه كبر في الموبايل عشان العناصر بقت تحت بعض، فلازم نعوض ده */
-    padding-top: 180px;
+  /* إخفاء زرار الـ CV من الناف بار في الموبايل لتوفير المساحة */
+  .nav-cv-btn {
+    display: none !important;
+  }
 
-    /* تظبيط الصورة عشان تبان في الموبايل */
-    /* هنخليها تبدأ من اليمين تحت عشان جسمك يبان، ونقلل حجمها شوية عشان متغطيش الشاشة كلها */
-    background: var(--bg-color) url("../img/hero.png") no-repeat right bottom;
-    background-size: 90% auto;
+  /* 2. تنسيق سكشن الهيرو */
+  .hero {
+    padding-top: 160px;
+    background-position: 25% center; /* تحريك الصورة لتظهر بشكل أفضل */
+    position: relative;
+    z-index: 1;
+  }
+
+  /* طبقة تعتيم خفيفة وراء الكلام في الموبايل فقط لسهولة القراءة بدون مربعات مزعجة */
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(8, 11, 15, 0.7),
+      var(--bg-color)
+    );
+    z-index: -1;
   }
 
   .hero-container {
@@ -568,48 +575,30 @@ footer {
 
   .hero-content {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* إضافة خلفية شبه شفافة ورا الكلام عشان لو جه فوق الصورة يبان بوضوح */
-    background-color: rgba(11, 15, 20, 0.7);
-    padding: 20px;
-    border-radius: 15px;
+    max-width: 100%;
+    background: transparent; /* إزالة المربع المزعج */
+    padding: 0;
   }
 
   .hero-content h1 {
-    font-size: 2.5rem; /* تصغير الاسم شوية */
-  }
-
-  .hero-content .job-title {
-    font-size: 1.2rem;
+    font-size: 2.8rem;
   }
 
   .hero-actions {
     justify-content: center;
   }
 
-  /* تقليل المساحات الفاضية في باقي الأقسام */
+  /* 3. تقليل مساحات الأقسام لتناسب الشاشات الصغيرة */
   .projects,
   .skills,
   .contact {
     padding: 60px 0;
   }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .project-card,
-  .skill-card {
-    padding: 25px;
-  }
 }
 
-/* الشاشات الصغيرة جدا (الموبايلات) */
 @media (max-width: 480px) {
   .hero-content h1 {
-    font-size: 2rem; /* تصغير الاسم أكتر للشاشات الصغيرة جدا */
+    font-size: 2.2rem;
   }
 
   .hero-content .job-title {
@@ -619,20 +608,10 @@ footer {
   .cta-btn {
     flex-direction: column;
     width: 100%;
-    gap: 15px;
   }
 
   .btn-primary,
   .btn-secondary {
     text-align: center;
-    width: 100%;
-  }
-
-  .nav-menu ul {
-    gap: 0.8rem;
-  }
-
-  .nav-menu a {
-    font-size: 0.9rem; /* تصغير حجم الروابط شوية */
   }
 }
