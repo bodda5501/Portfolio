@@ -385,68 +385,136 @@ header {
 /* =========================================
    Skills Section
    ========================================= */
-   .skills {
-    padding: 100px 0;
-    background-color: var(--bg-color); 
-  }
-  
-  .skills-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* استخدام Grid لترتيب الكروت بجوار بعضها وتجاوبها مع الشاشات تلقائياً */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-  }
-  
-  /* =========================================
+.skills {
+  padding: 100px 0;
+  background-color: var(--bg-color);
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* استخدام Grid لترتيب الكروت بجوار بعضها وتجاوبها مع الشاشات تلقائياً */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* =========================================
      Skill Card Styling
      ========================================= */
-  .skill-card {
-    background-color: #12181f; /* نفس لون كارت المشاريع لتوحيد الهوية */
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-top: 4px solid var(--accent-color); /* خط أخضر سميك في الأعلى للمسة احترافية */
-    border-radius: 10px;
-    padding: 35px 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  /* تأثير التمرير (Hover) */
-  .skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  }
-  
-  .skill-card h3 {
-    font-size: 1.5rem;
-    color: var(--text-color);
-    margin-bottom: 1.8rem;
-    text-align: center;
-    letter-spacing: 0.5px;
-  }
-  
-  /* تنسيق قائمة المهارات */
-  .skill-card ul {
-    list-style: none;
-  }
-  
-  .skill-card li {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-  }
-  
-  /* إضافة علامة (✔) خضراء قبل كل مهارة بدون تعديل الـ HTML */
-  .skill-card li::before {
-    content: '✔';
-    color: var(--accent-color);
-    margin-right: 12px;
-    font-size: 1rem;
-  }
+.skill-card {
+  background-color: #12181f; /* نفس لون كارت المشاريع لتوحيد الهوية */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 4px solid var(--accent-color); /* خط أخضر سميك في الأعلى للمسة احترافية */
+  border-radius: 10px;
+  padding: 35px 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* تأثير التمرير (Hover) */
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.skill-card h3 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 1.8rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* تنسيق قائمة المهارات */
+.skill-card ul {
+  list-style: none;
+}
+
+.skill-card li {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+/* إضافة علامة (✔) خضراء قبل كل مهارة بدون تعديل الـ HTML */
+.skill-card li::before {
+  content: "✔";
+  color: var(--accent-color);
+  margin-right: 12px;
+  font-size: 1rem;
+}
+
+/* =========================================
+   Contact Section
+   ========================================= */
+.contact {
+  padding: 100px 0 120px; /* مساحة أكبر من تحت لراحة العين قبل الفوتر */
+  background-color: var(--bg-color);
+  text-align: center; /* توسيط كل المحتوى */
+}
+
+.contact-container {
+  max-width: 700px; /* حصر العرض عشان النص ميكونش مفرود بزيادة وشكله شيك */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cta-sentence {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+/* تنسيق أيقونات التواصل لتكون بارزة وكبيرة */
+.contact-options {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contact-options a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px; /* حجم أكبر قليلاً من أيقونات الهيرو للفت الانتباه */
+  height: 60px;
+  background-color: transparent; /* خلفية شفافة */
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color); /* إطار أخضر */
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+/* تأثير التمرير للأيقونات في قسم التواصل */
+.contact-options a:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color); /* قلب الألوان (الأيقونة غامقة والخلفية خضراء) */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 210, 122, 0.2); /* توهج أخضر خفيف */
+}
+
+/* =========================================
+     Footer
+     ========================================= */
+footer {
+  background-color: #080b0f; /* درجة أغمق سيكا من الخلفية لفصل الفوتر بصرياً */
+  padding: 30px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* خط فاصل خفيف جداً */
+}
+
+.footer-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
