@@ -1,0 +1,144 @@
+/* =========================================
+   Variables & Base Styles
+   ========================================= */
+:root {
+  --bg-color: #0b0f14; /* لون داكن يتماشى مع الخلفية */
+  --text-color: #ffffff;
+  --accent-color: #00d27a; /* اللون الأخضر المطابق للتصميم */
+  --text-muted: #a3b3bc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* =========================================
+     Header & Navbar
+     ========================================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(11, 15, 20, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styles */
+.nav-logo {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--text-color); /* حروف AY باللون الأبيض */
+}
+
+.nav-logo span {
+  color: var(--accent-color); /* الأقواس باللون الأخضر */
+}
+
+/* Navigation Links */
+.nav-menu ul {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-menu a {
+  position: relative; /* ضروري لضبط موضع الخط السفلي */
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding-bottom: 5px; /* مسافة صغيرة بين النص والخط */
+  transition: color 0.3s ease;
+}
+
+/* إنشاء الخط السفلي مخفي كافتراضي */
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  width: 0; /* يبدأ العرض بصفر */
+  height: 3px; /* سمك الخط */
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color); /* اللون الأخضر */
+  transition: width 0.3s ease; /* سرعة حركة الخط */
+}
+
+/* إظهار الخط عند التمرير (hover) أو لما يكون نشط (active) 
+  مع الحفاظ على لون النص أبيض */
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--text-color); /* الكلمة تبقى بيضاء */
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+  width: 100%; /* يتمدد الخط ليغطي الكلمة */
+}
+
+/* إلغاء تأثير الخط السفلي من زر الـ CV لأنه يحتوي على تصميم مختلف */
+.nav-cv-btn::after {
+  display: none;
+}
+
+/* CV Button Styling */
+.nav-cv-btn {
+  border: 2px solid var(--accent-color);
+  padding: 5px 22px;
+  border-radius: 30px; /* شكل الحبة الدائرية كما في التصميم */
+  color: var(--text-color) !important;
+  transition: all 0.3s ease !important;
+}
+
+.nav-cv-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color) !important;
+}
+
+/* =========================================
+   Hero Section
+   ========================================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+
+  /* أضف هذا السطر لتعويض ارتفاع الناف بار */
+  padding-top: 80px; /* يمكنك تعديل الرقم حسب ارتفاع الناف بار الفعلي */
+
+  background: linear-gradient(
+      to right,
+      rgba(11, 15, 20, 0.2),
+      rgba(11, 15, 20, 0.9)
+    ),
+    url("../img/hero.png") no-repeat center center;
+  background-size: cover;
+}
