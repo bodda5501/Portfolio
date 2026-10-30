@@ -518,3 +518,101 @@ footer {
   font-size: 0.95rem;
   letter-spacing: 0.5px;
 }
+
+/* =========================================
+   Responsive Design (Media Queries)
+   ========================================= */
+
+/* الشاشات المتوسطة (التابلت والموبايل بالعرض) */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .nav-menu ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .hero {
+    padding-top: 140px;
+    background-position: center;
+  }
+
+  .hero-container {
+    justify-content: center;
+  }
+
+  .hero-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-content .job-title {
+    font-size: 1.3rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .projects {
+    padding: 60px 0;
+  }
+
+  .skills {
+    padding: 60px 0;
+  }
+
+  .contact {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .project-card {
+    padding: 25px;
+  }
+}
+
+/* الشاشات الصغيرة جدا (الموبايلات) */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .cta-btn {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .btn-primary {
+    text-align: center;
+    width: 100%;
+  }
+
+  .btn-secondary {
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-menu ul {
+    gap: 1rem;
+  }
+
+  .nav-menu a {
+    font-size: 1rem;
+  }
+}
