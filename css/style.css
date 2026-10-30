@@ -523,23 +523,43 @@ footer {
    Responsive Design (Media Queries)
    ========================================= */
 
+/* =========================================
+   Responsive Design (Media Queries)
+   ========================================= */
+
 /* الشاشات المتوسطة (التابلت والموبايل بالعرض) */
 @media (max-width: 768px) {
+  /* تعديل الناف بار عشان مياخدش مساحة كبيرة */
+  header {
+    padding: 10px 0; /* تقليل المسافة فوق وتحت الناف بار */
+  }
+
   .nav-container {
     flex-direction: column;
-    gap: 15px;
-    padding: 15px;
+    gap: 10px; /* تقليل المسافة بين اللوجو والروابط */
+    padding: 10px;
+  }
+
+  .nav-logo {
+    font-size: 2rem; /* تصغير اللوجو شوية */
   }
 
   .nav-menu ul {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem; /* تقليل المسافة بين الروابط */
   }
 
+  /* تعديل قسم الهيرو لضبط الصورة والمساحات */
   .hero {
-    padding-top: 140px;
-    background-position: center;
+    /* تزويد المسافة اللي فوق عشان الناف بار ميغطيش على الكلام */
+    /* الناف بار حجمه كبر في الموبايل عشان العناصر بقت تحت بعض، فلازم نعوض ده */
+    padding-top: 180px;
+
+    /* تظبيط الصورة عشان تبان في الموبايل */
+    /* هنخليها تبدأ من اليمين تحت عشان جسمك يبان، ونقلل حجمها شوية عشان متغطيش الشاشة كلها */
+    background: var(--bg-color) url("../img/hero.png") no-repeat right bottom;
+    background-size: 90% auto;
   }
 
   .hero-container {
@@ -551,28 +571,27 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* إضافة خلفية شبه شفافة ورا الكلام عشان لو جه فوق الصورة يبان بوضوح */
+    background-color: rgba(11, 15, 20, 0.7);
+    padding: 20px;
+    border-radius: 15px;
   }
 
   .hero-content h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem; /* تصغير الاسم شوية */
   }
 
   .hero-content .job-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .hero-actions {
     justify-content: center;
   }
 
-  .projects {
-    padding: 60px 0;
-  }
-
-  .skills {
-    padding: 60px 0;
-  }
-
+  /* تقليل المساحات الفاضية في باقي الأقسام */
+  .projects,
+  .skills,
   .contact {
     padding: 60px 0;
   }
@@ -581,7 +600,8 @@ footer {
     font-size: 2rem;
   }
 
-  .project-card {
+  .project-card,
+  .skill-card {
     padding: 25px;
   }
 }
@@ -589,7 +609,11 @@ footer {
 /* الشاشات الصغيرة جدا (الموبايلات) */
 @media (max-width: 480px) {
   .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 2rem; /* تصغير الاسم أكتر للشاشات الصغيرة جدا */
+  }
+
+  .hero-content .job-title {
+    font-size: 1.1rem;
   }
 
   .cta-btn {
@@ -598,21 +622,17 @@ footer {
     gap: 15px;
   }
 
-  .btn-primary {
-    text-align: center;
-    width: 100%;
-  }
-
+  .btn-primary,
   .btn-secondary {
     text-align: center;
     width: 100%;
   }
 
   .nav-menu ul {
-    gap: 1rem;
+    gap: 0.8rem;
   }
 
   .nav-menu a {
-    font-size: 1rem;
+    font-size: 0.9rem; /* تصغير حجم الروابط شوية */
   }
 }
