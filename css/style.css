@@ -248,3 +248,136 @@ header {
   transform: translateY(-5px);
   background-color: #00e686;
 }
+
+/* =========================================
+   Projects Section
+   ========================================= */
+.projects {
+  padding: 100px 0; /* مساحات واسعة فوق وتحت لراحة العين */
+  background-color: var(--bg-color);
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* تنسيق العنوان الرئيسي للسكشن */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+
+/* خط أخضر صغير تحت العنوان بيدي لمسة احترافية */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* =========================================
+     Project Card Styling
+     ========================================= */
+.project-card {
+  background-color: #12181f; /* درجة أفتح قليلاً جداً من الخلفية لإبراز الكارت */
+  border: 1px solid rgba(255, 255, 255, 0.05); /* إطار خفيف جداً */
+  border-radius: 12px;
+  padding: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* تأثير عند تمرير الماوس على الكارت */
+.project-card:hover {
+  transform: translateY(-5px); /* يرتفع لأعلى قليلاً */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* ظل ناعم */
+  border-color: rgba(0, 210, 122, 0.3); /* الإطار ينور بلون أخضر خفيف */
+}
+
+.project-title {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.project-description {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* التقنيات المستخدمة (Tech Stack) */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.tech-stack li {
+  background-color: rgba(0, 210, 122, 0.1); /* خلفية خضراء شفافة */
+  color: var(--accent-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* مميزات المشروع (Key Features) */
+.key-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.key-features li {
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+}
+
+/* استبدال النقطة العادية بسهم مميز (▹) */
+.key-features li::before {
+  content: "▹";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+}
+
+/* روابط المشروع (Live Demo & Source Code) */
+.project-links {
+  display: flex;
+  gap: 25px;
+}
+
+.project-links .btn-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.project-links .btn-link i {
+  font-size: 1.2rem;
+}
+
+.project-links .btn-link:hover {
+  color: var(--accent-color); /* الكلمة والأيقونة بيتحولوا للأخضر مع بعض */
+}
