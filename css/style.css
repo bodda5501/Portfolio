@@ -14,6 +14,10 @@
   box-sizing: border-box;
 }
 
+section {
+  scroll-margin-top: 100px; /* بيمنع الناف بار إنه يغطي على بداية السكشن */
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -583,11 +587,17 @@ footer {
   }
 
   /* 2. تنسيق سكشن الهيرو */
+  /* تعديل قسم الهيرو لضبط الصورة والمساحات */
   .hero {
-    padding-top: 160px;
-    background-position: 25% center; /* تحريك الصورة لتظهر بشكل أفضل */
-    position: relative;
-    z-index: 1;
+    padding-top: 120px;
+    padding-bottom: 80px; /* مساحة من تحت عشان صورتك تاخد راحتها وتظهر */
+
+    /* فصل الخصائص لمنع أي تعارض وإظهار الصورة */
+    background-color: var(--bg-color);
+    background-image: url("../img/hero.png");
+    background-position: left bottom; /* تثبيت صورتك في أسفل اليسار */
+    background-size: 95% auto; /* حجم مناسب للموبايل */
+    background-repeat: no-repeat;
   }
 
   /* طبقة تعتيم خفيفة وراء الكلام في الموبايل فقط لسهولة القراءة بدون مربعات مزعجة */
@@ -612,9 +622,18 @@ footer {
 
   .hero-content {
     text-align: center;
-    max-width: 100%;
-    background: transparent; /* إزالة المربع المزعج */
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* خلفية شفافة وتأثير زجاجي عشان متغطيش على صورتك */
+    background-color: rgba(11, 15, 20, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /* لدعم متصفحات سفاري */
+
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05); /* إطار خفيف شيك */
   }
 
   .hero-content h1 {
