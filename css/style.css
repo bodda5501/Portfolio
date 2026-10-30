@@ -381,3 +381,72 @@ header {
 .project-links .btn-link:hover {
   color: var(--accent-color); /* الكلمة والأيقونة بيتحولوا للأخضر مع بعض */
 }
+
+/* =========================================
+   Skills Section
+   ========================================= */
+   .skills {
+    padding: 100px 0;
+    background-color: var(--bg-color); 
+  }
+  
+  .skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* استخدام Grid لترتيب الكروت بجوار بعضها وتجاوبها مع الشاشات تلقائياً */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  /* =========================================
+     Skill Card Styling
+     ========================================= */
+  .skill-card {
+    background-color: #12181f; /* نفس لون كارت المشاريع لتوحيد الهوية */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 4px solid var(--accent-color); /* خط أخضر سميك في الأعلى للمسة احترافية */
+    border-radius: 10px;
+    padding: 35px 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* تأثير التمرير (Hover) */
+  .skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .skill-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1.8rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+  
+  /* تنسيق قائمة المهارات */
+  .skill-card ul {
+    list-style: none;
+  }
+  
+  .skill-card li {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+  }
+  
+  /* إضافة علامة (✔) خضراء قبل كل مهارة بدون تعديل الـ HTML */
+  .skill-card li::before {
+    content: '✔';
+    color: var(--accent-color);
+    margin-right: 12px;
+    font-size: 1rem;
+  }
