@@ -30,3 +30,16 @@ window.addEventListener("load", updateActiveLink);
 
 // 2. تشغيل الكود في كل مرة يقوم فيها المستخدم بالتمرير بالماوس
 window.addEventListener("scroll", updateActiveLink);
+
+const mobileMenu = document.getElementById("mobile-menu");
+const navMenuElement = document.querySelector(".nav-menu");
+
+mobileMenu.addEventListener("click", () => {
+  navMenuElement.classList.toggle("active");
+});
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    navMenuElement.classList.remove("active");
+  });
+});

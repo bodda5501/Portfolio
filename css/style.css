@@ -519,6 +519,13 @@ footer {
   letter-spacing: 0.5px;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
 /* =========================================
    Responsive Design (Media Queries)
    ========================================= */
@@ -529,15 +536,36 @@ footer {
     padding: 10px 0;
   }
 
+  .menu-toggle {
+    display: block;
+  }
+
   .nav-container {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #080b0f;
+    padding: 20px 0;
+    display: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-menu.active {
+    display: block;
   }
 
   .nav-menu ul {
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
   /* إخفاء زرار الـ CV من الناف بار في الموبايل لتوفير المساحة */
