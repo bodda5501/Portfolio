@@ -682,3 +682,31 @@ footer {
   transition: width 0.1s ease-out; /* حركة سلسة أثناء التعبئة */
   z-index: 1000;
 }
+
+/* =========================================
+   Scroll Reveal Animations
+   ========================================= */
+/* إخفاء قسم الهيرو وتحريكه لليسار كحالة ابتدائية */
+.hero-content {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* منحنى حركة سلس جداً */
+  }
+  
+  /* إخفاء باقي الأقسام وتحريكها للأسفل كحالة ابتدائية */
+  .projects-container, 
+  .skills-container, 
+  .contact-container {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  /* كلاس الإظهار الذي ستضيفه الجافاسكريبت بمجرد الوصول للقسم */
+  .hero-content.show, 
+  .projects-container.show, 
+  .skills-container.show, 
+  .contact-container.show {
+    opacity: 1;
+    transform: translate(0);
+  }

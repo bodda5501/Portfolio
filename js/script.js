@@ -65,3 +65,30 @@ window.addEventListener("scroll", updateProgressBar);
 
 // تشغيلها فور التحميل لضبط الشريط إذا قام المستخدم بتحديث الصفحة وهو بالأسفل
 window.addEventListener("load", updateProgressBar);
+
+/* =========================================
+   Reveal Animations on Scroll
+   ========================================= */
+const observerOptions = {
+  threshold: 0.15, // الأنيميشن يشتغل لما 15% من السكشن يظهر قدامك في الشاشة
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // إضافة كلاس العرض عند ظهور العنصر
+      entry.target.classList.add("show");
+
+      // إيقاف المراقبة للعنصر ده عشان الحركة تتعمل مرة واحدة بس وماتشتتش المستخدم
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// تحديد كل الحاويات اللي عايزين نطبق عليها الحركة
+const animatedElements = document.querySelectorAll(
+  ".hero-content, .projects-container, .skills-container, .contact-container"
+);
+
+// تشغيل المراقب عليهم كلهم
+animatedElements.forEach((el) => observer.observe(el));
