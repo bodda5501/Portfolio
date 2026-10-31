@@ -668,3 +668,17 @@ footer {
     text-align: center;
   }
 }
+
+/* =========================================
+   Scroll Progress Bar
+   ========================================= */
+.scroll-progress {
+  position: absolute;
+  bottom: 0; /* التثبيت في أسفل الناف بار */
+  left: 0;
+  height: 3px; /* سُمك الخط، تقدر تخليه 2px لو عايزه أرفع */
+  background-color: var(--accent-color); /* لونك الأخضر المميز */
+  width: 0%; /* بيبدأ العرض بصفر */
+  transition: width 0.1s ease-out; /* حركة سلسة أثناء التعبئة */
+  z-index: 1000;
+}

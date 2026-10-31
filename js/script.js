@@ -43,3 +43,25 @@ navLinks.forEach((link) => {
     navMenuElement.classList.remove("active");
   });
 });
+
+const progressBar = document.getElementById("scrollProgress");
+
+function updateProgressBar() {
+  // حساب إجمالي المساحة المتاحة للتمرير في الصفحة
+  const totalScrollHeight =
+    document.documentElement.scrollHeight - window.innerHeight;
+
+  // حساب النسبة المئوية للمكان الحالي
+  const scrollPercentage = (window.scrollY / totalScrollHeight) * 100;
+
+  // تطبيق النسبة المئوية على عرض الشريط
+  if (progressBar) {
+    progressBar.style.width = `${scrollPercentage}%`;
+  }
+}
+
+// تشغيل الدالة مع كل تمرير بالماوس
+window.addEventListener("scroll", updateProgressBar);
+
+// تشغيلها فور التحميل لضبط الشريط إذا قام المستخدم بتحديث الصفحة وهو بالأسفل
+window.addEventListener("load", updateProgressBar);
