@@ -688,25 +688,62 @@ footer {
    ========================================= */
 /* إخفاء قسم الهيرو وتحريكه لليسار كحالة ابتدائية */
 .hero-content {
-    opacity: 0;
-    transform: translateX(-100px);
-    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* منحنى حركة سلس جداً */
-  }
-  
-  /* إخفاء باقي الأقسام وتحريكها للأسفل كحالة ابتدائية */
-  .projects-container, 
-  .skills-container, 
-  .contact-container {
-    opacity: 0;
-    transform: translateY(80px);
-    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-  
-  /* كلاس الإظهار الذي ستضيفه الجافاسكريبت بمجرد الوصول للقسم */
-  .hero-content.show, 
-  .projects-container.show, 
-  .skills-container.show, 
-  .contact-container.show {
-    opacity: 1;
-    transform: translate(0);
-  }
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* منحنى حركة سلس جداً */
+}
+
+/* إخفاء باقي الأقسام وتحريكها للأسفل كحالة ابتدائية */
+.projects-container,
+.skills-container,
+.contact-container {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* كلاس الإظهار الذي ستضيفه الجافاسكريبت بمجرد الوصول للقسم */
+.hero-content.show,
+.projects-container.show,
+.skills-container.show,
+.contact-container.show {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* =========================================
+   Subtle Shadows & Glow Effects
+   ========================================= */
+/* 1. ظل سفلي ناعم للناف بار لفصله بوضوح عن محتوى الصفحة */
+header {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* 2. توهج أخضر خفيف للوجو */
+.nav-logo {
+  text-shadow: 0 0 15px rgba(0, 210, 122, 0.3);
+}
+
+/* 3. ظل خفيف لاسمك في قسم الهيرو لإبرازه */
+.hero-content h1 {
+  text-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* 4. توهج أخضر نيون ناعم للأزرار وأيقونات التواصل عند التمرير (Hover) */
+.btn-primary:hover,
+.btn-secondary:hover,
+.social-links-btn a:hover,
+.contact-options a:hover {
+  box-shadow: 0 0 18px rgba(0, 210, 122, 0.4);
+}
+
+/* 5. إعطاء الكروت عمق دائم، وتوهج أخضر أنيق عند التمرير بالماوس */
+.project-card,
+.skill-card {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.project-card:hover,
+.skill-card:hover {
+  box-shadow: 0 15px 35px rgba(0, 210, 122, 0.15);
+}
