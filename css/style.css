@@ -219,7 +219,7 @@ header {
   font-weight: 600;
   padding: 8px 28px;
   border: 2px solid var(--accent-color);
-  border-radius: 8px;
+  border-radius: 30px;
   transition: all 0.3s ease;
 }
 
