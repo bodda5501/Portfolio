@@ -747,3 +747,13 @@ header {
 .skill-card:hover {
   box-shadow: 0 15px 35px rgba(0, 210, 122, 0.15);
 }
+
+/* =========================================
+   Landscape Mode Fix (Small Heights)
+   ========================================= */
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero {
+    padding-top: 140px; /* دفع المحتوى لأسفل بعيداً عن الناف بار */
+    min-height: 140vh; /* إعطاء مساحة كافية للتمرير (Scroll) بحرية */
+  }
+}

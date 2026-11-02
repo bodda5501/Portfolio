@@ -4,11 +4,9 @@ const navLinks = document.querySelectorAll(
 );
 
 function updateActiveLink() {
-  // تعيين قسم الهيرو (Home) كافتراضي دائماً
   let current = "hero";
 
   sections.forEach((section) => {
-    // طرح 150 بكسل كمسافة تعويضية لضمان انتقال الخط للقسم الجديد بمجرد ظهوره على الشاشة
     const sectionTop = section.offsetTop - 150;
 
     if (window.scrollY >= sectionTop) {
@@ -16,7 +14,12 @@ function updateActiveLink() {
     }
   });
 
-  // إزالة الخط الأخضر من جميع الروابط وإضافته للرابط المطابق للقسم الحالي
+  // الإضافة الجديدة: التحقق من الوصول لأسفل الصفحة تماماً
+  // نطرح 50 بكسل كمسافة أمان لتجنب أخطاء حسابات المتصفحات المختلفة
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+    current = "contact"; // إجبار الخط على الوقوف تحت Contact
+  }
+
   navLinks.forEach((link) => {
     link.classList.remove("active");
     if (link.getAttribute("href") === `#${current}`) {
