@@ -447,12 +447,13 @@ header {
   font-weight: 500;
 }
 
-/* إضافة علامة (✔) خضراء قبل كل مهارة بدون تعديل الـ HTML */
-.skill-card li::before {
-  content: "✔";
-  color: var(--accent-color);
+/* تنسيق أيقونات المهارات الجديدة (FontAwesome) */
+.skill-card li i {
+  color: var(--accent-color); /* لونك الأخضر المميز */
+  font-size: 1.2rem;
   margin-right: 12px;
-  font-size: 1rem;
+  width: 25px; /* تثبيت العرض عشان النصوص كلها تبدأ من نفس الخط بشكل منظم */
+  text-align: center;
 }
 
 /* =========================================
